@@ -14,7 +14,10 @@ $$B_i = \gamma_i B_1 + ( 1 - \gamma_i ) B_2$$
 If Color Line Assumption holds, the the true mate $\alpha$ satifies 
 $$\alpha = \mathbf{\alpha}^\mathrm{T} I_i +b $$
 For all pixels in the window
-( $I_i$ is 3-by-1 matrix, $ \mathbf{\alpha}^\mathrm{T}$ is 3-by-1 vector, and $b$ is scalar)   ## Why is this Time?  
+( $I_i$ is 3-by-1 matrix, $ \mathbf{\alpha}^\mathrm{T}$ is 3-by-1 vector, and $b$ is scalar)   
+
+## Why is this Time?  
+
 $$
 {\begin{equation}
 \begin{aligned}
@@ -68,3 +71,11 @@ unknown
     I_i - B_2
 \end{matrix}\right]}
 $$
+=>  
+
+## How does this help with matting
+cost function:  
+$$ J({\alpha_i, a_i, b_i} ) = \sum_{j=1}^N \sum_{ i \in window j} ( \alpha_i - (\mathbf{\alpha_i}^\mathrm{T}I_i +b_i))^2$$
+
+windows enforce coupling between pixels  
+All pixels - make a window around each  
